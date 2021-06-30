@@ -1979,7 +1979,9 @@ int avformat_open_input(AVFormatContext **ps, const char *url,
  * Read packets of a media file to get stream information. This
  * is useful for file formats with no headers such as MPEG. This
  * function also computes the real framerate in case of MPEG-2 repeat
- * frame mode.
+ * frame mode.  
+ * 读取媒体文件的包结构来获取流的信息。对于没有文件头的文件格式非常有用，
+ * 如MPEG格式。此函数还能计算MPEG-2 重复帧模式下的真实帧速率。
  * The logical file position is not changed by this function;
  * examined packets may be buffered for later processing.
  *
@@ -1992,9 +1994,11 @@ int avformat_open_input(AVFormatContext **ps, const char *url,
  *
  * @note this function isn't guaranteed to open all the codecs, so
  *       options being non-empty at return is a perfectly normal behavior.
+ * @note 此函数不保证打开所有的编码器，所以返回的选项不为空是一种完全正常的行为。
  *
  * @todo Let the user decide somehow what information is needed so that
  *       we do not waste time getting stuff the user does not need.
+ * @todo 让用户决定需要哪些信息，不浪费时间去获取用户不需要的信息。
  */
 int avformat_find_stream_info(AVFormatContext *ic, AVDictionary **options);
 
