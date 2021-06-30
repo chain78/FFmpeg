@@ -1984,8 +1984,10 @@ int avformat_open_input(AVFormatContext **ps, const char *url,
  * 如MPEG格式。此函数还能计算MPEG-2 重复帧模式下的真实帧速率。
  * The logical file position is not changed by this function;
  * examined packets may be buffered for later processing.
+ * 逻辑文件的位置不会被改变，被检查的包被缓冲起来用于后续处理。
  *
  * @param ic media file handle
+ * @param ic 多媒体文件句柄
  * @param options  If non-NULL, an ic.nb_streams long array of pointers to
  *                 dictionaries, where i-th member contains options for
  *                 codec corresponding to i-th stream.
